@@ -25,11 +25,6 @@ const args = minimist(process.argv.slice(2))
 // See what is stored in `args` by minimist
 console.log(args)
 // Default action
-if (args.j) {
-    console.log(data);
-    process.exit(0)
-}
-
 // Was the command called with `-h`?
 if ( args.h ) {
 // If yes, then log the help message onto STDOUT
@@ -45,6 +40,13 @@ console.log(`Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME
 // And exit
 process.exit(0)
 }
+
+if (args.j) {
+    console.log(data);
+    process.exit(0)
+}
+
+
 const days = args.d 
 
 if (days == 0) {
